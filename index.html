@@ -1,1 +1,129 @@
-Hello World
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <script async src="main.js"></script>
+    <script async src="visuals.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Map creator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Map Creator</h1>
+    </header>
+    <main>
+        <div id="program-container" class="d-flex align-items-start">
+            <nav id="tool-bar" class="d-flex flex-column align-items-center gap-2">
+                <a href="#collapse-tools" data-bs-toggle="collapse" class="btn btn-outline-secondary d-flex"
+                    id="collapse-btn">Hide toolbar</a>
+                <div id="collapse-tools" class="collapse show">
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <form class="d-flex gap-1 align-items-center justify-content-center" id="dimensions">
+                            <label for="width">Width</label>
+                            <input required name="width" type="number" min="8" max="64" class="form-control"
+                                placeholder="16" id="width"></input>
+                            <label for="height">Height</label>
+                            <input required name="height" type="number" min="8" max="64" class="form-control"
+                                placeholder="16" id="height"></input>
+                            <input type="submit" value="Update" class="btn btn-outline-primary">
+                        </form>
+                        <ul id="tools" class="list-group list-group-horizontal">
+                            <!-- Selection tools: erase, fill -->
+                            <li class="list-group-item"><button class="btn btn-outline-primary tile-btn tool-btn active"
+                                    id="erase-tool">Erase mode</button>
+                            </li>
+                            <li class="list-group-item"><button class="btn btn-outline-primary tool-btn"
+                                    id="bucket-tool">Fill
+                                    mode</button>
+                            </li>
+                        </ul>
+                        <div id="tile-selections" class="d-flex flex-column align-items-center">
+                            <!--  Groups of 3 -->
+                            <ul id="tiles" class="list-group list-group-horizontal">
+                                <!-- Tiles -->
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-1">
+                                        <img src="figures/tiles/tile-1.png" alt="tile 1">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-2">
+                                        <img src="figures/tiles/tile-2.png" alt="tile 2">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-3">
+                                        <img src="figures/tiles/tile-3.png" alt="tile 3">
+                                    </button>
+                                </li>
+                            </ul>
+                            <!--  Groups of 3 -->
+                            <ul id="tiles" class="list-group list-group-horizontal">
+                                <!-- Tiles -->
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-4">
+                                        <img src="figures/tiles/tile-4.png" alt="tile 4">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-5">
+                                        <img src="figures/tiles/tile-5.png" alt="tile 5">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-6">
+                                        <img src="figures/tiles/tile-6.png" alt="tile 6">
+                                    </button>
+                                </li>
+                            </ul>
+                            <!--  Groups of 3 -->
+                            <ul id="tiles" class="list-group list-group-horizontal">
+                                <!-- Tiles -->
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-7">
+                                        <img src="" alt="tile 7">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-8">
+                                        <img src="" alt="tile 8">
+                                    </button>
+                                </li>
+                                <li class="list-group-item"><button class="btn btn-outline-primary tile-btn"
+                                        id="tile-9">
+                                        <img src="" alt="tile 9">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-outline-secondary" id="output-btn">View Output</button>
+                            <p>(Opens in a new window)</p>
+                            <label for="filename">Save As:</label>
+                            <input name="filename" type="text" placeholder="new-map.map" id="filename-field">
+                            <button class="btn btn-outline-secondary" id="download-btn">Download Map</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="map">
+                <!-- Map content goes here -->
+                <!-- <div class="tile"></div> -->
+                <!-- <div class="tile tile-2"></div> -->
+            </div>
+        </div>
+        <aside></aside>
+    </main>
+</body>
+
+</html>
